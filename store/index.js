@@ -4,12 +4,11 @@ export const state = () => ({
 })
 
 export const mutations = {
-  addNumberMaxComic(state, number) {
-    state.numberMaxComic = number
+  addNumberMaxComic(states, number) {
+    states.numberMaxComic = number
   },
-  addItemRating(data) {
-    const items = data
-    state.itemsRating.push(items)
+  addItemRating(states, data) {
+    states.itemsRating.push(data)
   }
 }
 

@@ -1,9 +1,11 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <ComicDetail></ComicDetail>
-    </v-col>
-  </v-row>
+  <v-container>
+    <v-row justify="center" align="center">
+      <v-col cols="12" lg="6" md="6" sm="12">
+        <ComicDetail></ComicDetail>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
