@@ -35,7 +35,13 @@
       </v-container>
     </v-main>
     <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span
+        >By
+        <a href="https://github.com/j17hernandez" target="_blank">
+          j17hernandez</a
+        >
+        &copy; {{ new Date().getFullYear() }}</span
+      >
     </v-footer>
   </v-app>
 </template>
@@ -50,14 +56,14 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home',
+          title: 'Home',
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          icon: 'mdi-history',
+          title: 'Rating History',
+          to: '/rating-comics',
         },
       ],
       miniVariant: false,

@@ -14,7 +14,7 @@ const GlobalMixin = {
     },
   },
   methods: {
-    // Función de axios con método get, que recibe como parametro la URL
+    /* Función de listado que realiza una petición con axios, recibe como parametro la URL */
     $list(path) {
       return this.$axios.get(path)
     },

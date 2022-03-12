@@ -1,30 +1,32 @@
 <template>
-  <v-container v-if="isVisible" class="text-center justify-center">
+  <v-container v-if="isVisible" class="text-center justify-center contenedor">
     <v-card-title>
       <v-row no-gutters class="text-center">
-        <v-col cols="12" md="12">
+        <v-col cols="12" md="8" sm="12">
           <v-tooltip bottom>
             <template #activator="{ attrs, on }">
-              <h1 v-bind="attrs" v-on="on">
+              <h3 class="float-left" v-bind="attrs" v-on="on">
                 {{ nameComic }}
-              </h1>
+              </h3>
             </template>
             {{ itemComic.title }}
           </v-tooltip>
+        </v-col>
+        <v-col cols="12" md="4" sm="12">
           <v-tooltip bottom>
             <template #activator="{ attrs, on }">
               <v-btn
-                class="float-right"
+                :class="floatRight"
                 color="primary"
-                icon
+                outlined
                 v-bind="attrs"
                 v-on="on"
                 @click="getRandomComic"
               >
-                <v-icon>mdi-reload</v-icon>
+                Random
               </v-btn>
             </template>
-            <span>Reload Comic</span>
+            <span>Comic Random</span>
           </v-tooltip>
         </v-col>
       </v-row>
@@ -63,7 +65,7 @@
 <script>
 import { mapActions } from 'vuex'
 import InnerImageZoom from 'vue-inner-image-zoom'
-import GlobalMixin from '@/mixins/global'
+import GlobalMixin from '~/mixins/GlobalMixin'
 export default {
   name: 'ComicDetail',
   components: {
@@ -76,17 +78,35 @@ export default {
     }
   },
   computed: {
+    // Función para acortar el título en caso de tener más de 22 carácteres
     nameComic() {
       return this.itemComic.title.length > 22
         ? this.itemComic.title.substr(0, 22).concat('...')
         : this.itemComic.title
     },
+    // Computada para determinar si la data del comic existe
     isVisible() {
       let status = false
       if (this.itemComic !== undefined && this.itemComic !== null) {
         status = true
       }
       return status
+    },
+    /* Computada que retorna una clase para el botón
+       de mostrar un comic aleatorio 
+    */
+    floatRight() {
+      let nameClass
+      switch (this.$vuetify.breakpoint.name) {
+        case 'sm':
+        case 'xs':
+          nameClass = 'float-left'
+          break
+        default:
+          nameClass = 'float-right'
+          break
+      }
+      return nameClass
     },
   },
   created() {
@@ -106,20 +126,31 @@ export default {
           this.$error(err)
         })
     },
+    // Función para generar el número aleatorio y traer el comic
     async getRandomComic() {
       const numberRandom = this.$getNumberRandom()
       const numberRandomValided = await this.$validateNumberRandom(numberRandom)
-      this.$list(`/${numberRandomValided}/info.0.json`)
-        .then((resp) => {
-          this.itemComic = { rating: 0, ...resp.data }
-        })
-        .catch((err) => {
-          this.$error(err)
-        })
+      await this.getList(numberRandomValided)
     },
+    // Función para traer el comic aleatorio
+    async getList(numberPath) {
+      try {
+        const resp = await this.$list(`/${numberPath}/info.0.json`)
+        this.itemComic = { rating: 0, ...resp.data }
+      } catch (err) {
+        this.$error(err)
+      }
+    },
+    // Función para calificar el comic
     addComicRating() {
       this.addItem(this.itemComic)
     },
   },
 }
 </script>
+<style scoped>
+.contenedor {
+  border: 1px solid !important;
+  border-radius: 20px !important;
+}
+</style>

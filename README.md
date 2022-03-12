@@ -2,7 +2,9 @@
 
 ## Recomendations
 
-['Extension for block Chrome cors'](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino/related?hl=es)
+Posiblemente al intentar ejecutar el proyecto salga problemas de CORS, por las actualizaciones de chrome, sin embargo con la siguiente extensión, podrás ejecutarlo sin problema
+
+[Extension for block Chrome cors](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino/related?hl=es)
 
 ## Build Setup
 
@@ -16,6 +18,9 @@ $ npm run dev
 # build for production and launch server
 $ npm run build
 $ npm run start
+
+# run test of project
+$ npm run test
 
 # generate static project
 $ npm run generate
