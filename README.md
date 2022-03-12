@@ -1,5 +1,13 @@
 # xkcd-challenge
 
+# Preview Frontend
+![image](https://user-images.githubusercontent.com/57992471/158006345-e3b06b36-a970-40fd-92a3-e3b149e2f253.png)
+
+![image](https://user-images.githubusercontent.com/57992471/158006633-ad7fb77c-4c30-4767-8243-6962e23c6f23.png)
+![image](https://user-images.githubusercontent.com/57992471/158006644-c35c80e6-a2e7-4523-89a3-833caa97b094.png)
+
+
+
 ## Recomendations
 
 Posiblemente al intentar ejecutar el proyecto salga problemas de CORS, por las actualizaciones de chrome, sin embargo con la siguiente extensión, podrás ejecutarlo sin problema
