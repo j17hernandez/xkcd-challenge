@@ -17,7 +17,7 @@ Extension for Chrome CORS block, it's necessary to avoid problems with new chrom
 
 `Vue js`, `Vuetify`, `Jest`, `SonarQube`, `Axios`, `Vuex`, `Api xkcd`
 
-Link de la [Api xkcd] (https://xkcd.com/)
+Link de la [Api xkcd](https://xkcd.com/)
 
 Para la instalación de SonarQube se puede realizar desde la imagen de docker
 [SonarQube](https://hub.docker.com/_/sonarqube?tab=tags)
