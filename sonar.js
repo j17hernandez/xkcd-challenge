@@ -1,9 +1,11 @@
-const scanner = require('sonarqube-scanner')
+require('dotenv').config()
 
+const scanner = require('sonarqube-scanner')
 scanner(
   {
     serverUrl: 'http://localhost:9000/',
-    token: '83d3756ae7d996c759d7b363fb4b1abab7f5cc14',
+    token: process.env.TOKEN_SONAR_QUBE,
+    // token: '83d3756ae7d996c759d7b363fb4b1abab7f5cc14',
     options: {
       'sonar.projectName': 'xkcd-challenge',
       'sonar.projectKey': 'xkcd-challenge',

@@ -1,18 +1,39 @@
 # xkcd-challenge
 
 # Preview Frontend
+
 ![image](https://user-images.githubusercontent.com/57992471/158006345-e3b06b36-a970-40fd-92a3-e3b149e2f253.png)
 
 ![image](https://user-images.githubusercontent.com/57992471/158006633-ad7fb77c-4c30-4767-8243-6962e23c6f23.png)
 ![image](https://user-images.githubusercontent.com/57992471/158006644-c35c80e6-a2e7-4523-89a3-833caa97b094.png)
 
-
-
 ## Recomendations
 
-Posiblemente al intentar ejecutar el proyecto salga problemas de CORS, por las actualizaciones de chrome, sin embargo con la siguiente extensión, podrás ejecutarlo sin problema
+Extension for Chrome CORS block, it's necessary to avoid problems with new chrome updates
 
 [Extension for block Chrome cors](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino/related?hl=es)
+
+### Tecnologías usadas
+
+`Vue js`, `Vuetify`, `Jest`, `SonarQube`, `axios`, `vue router `
+
+Para la instalación de SonarQube se puede realizar desde la imagen de docker
+[SonarQube](https://hub.docker.com/_/sonarqube?tab=tags)
+y seguir los pasos del siguiente [link](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
+
+para la configuración sólo se debe crear un archivo .env con una variable de entorno llamada
+
+```js
+TOKEN_SONAR_QUBE = TokenGeneradoPorSonar
+```
+
+dónde se debe editar "TokenGeneradoPorSonar"
+
+```js
+    serverUrl: 'http://localhost:9000/',
+    token: 'tokenGeneradoPorSonar',
+
+```
 
 ## Build Setup
 
@@ -29,6 +50,9 @@ $ npm run start
 
 # run test of project
 $ npm run test
+
+#SonarQube
+$ npm run sonar
 
 # generate static project
 $ npm run generate
