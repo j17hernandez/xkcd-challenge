@@ -29,14 +29,6 @@ para la configuración sólo se debe crear un archivo .env con una variable de e
 TOKEN_SONAR_QUBE = TokenGeneradoPorSonar
 ```
 
-dónde se debe editar "TokenGeneradoPorSonar"
-
-```js
-    serverUrl: 'http://localhost:9000/',
-    token: 'tokenGeneradoPorSonar',
-
-```
-
 ## Build Setup
 
 ```bash
