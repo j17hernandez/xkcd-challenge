@@ -9,7 +9,21 @@
         md="4"
         sm="12"
       >
-        <CardComic :item="comic"></CardComic>
+        <CardComponent :item="comic"></CardComponent>
+      </v-col>
+      <v-col v-if="itemsRating.length === 0" cols="12" sm="12" md="12" lg="12">
+        <v-row no-gutters>
+          <v-spacer></v-spacer>
+          <v-col>
+            <v-img
+              :src="require('~/assets/img/emptyList.png')"
+              alt="Empty List"
+              width="700px"
+              contain
+            />
+          </v-col>
+          <v-spacer></v-spacer>
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
@@ -17,11 +31,11 @@
 
 <script>
 import { mapState } from 'vuex'
-import CardComic from '@/components/cardComic.vue'
+import CardComponent from '~/components/cardComponent.vue'
 export default {
   name: 'RatingComics',
   components: {
-    CardComic,
+    CardComponent,
   },
   computed: {
     ...mapState(['itemsRating']),

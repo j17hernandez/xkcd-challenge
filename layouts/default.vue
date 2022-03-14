@@ -5,6 +5,7 @@
       clipped
       fixed
       :mini-variant="miniVariant"
+      width="200"
       app
     >
       <v-list>
@@ -28,6 +29,20 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <v-tooltip bottom>
+        <template #activator="{ attrs, on }">
+          <v-btn
+            icon
+            href="https://github.com/j17hernandez/xkcd-challenge"
+            target="_blank"
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon>mdi-github</v-icon>
+          </v-btn>
+        </template>
+        <span>Go to repository</span>
+      </v-tooltip>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -71,6 +86,14 @@ export default {
       rightDrawer: false,
       title: 'Api Comics',
     }
+  },
+  methods: {
+    goRepository() {
+      document.window.location.href(
+        'https://github.com/j17hernandez/xkcd-challenge',
+        '_blank'
+      )
+    },
   },
 }
 </script>
