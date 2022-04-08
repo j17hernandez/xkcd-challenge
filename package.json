@@ -16,14 +16,15 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/proxy": "^2.1.0",
     "core-js": "^3.19.3",
     "nuxt": "^2.15.8",
     "sweetalert2": "^11.4.4",
     "vue": "^2.6.14",
+    "vue-inner-image-zoom": "^1.1.0",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "vuetify": "^2.6.1",
-    "vue-inner-image-zoom": "^1.1.0",
     "webpack": "^4.46.0"
   },
   "devDependencies": {
@@ -38,9 +39,9 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.2.0",
-    "sonarqube-scanner": "^2.8.1",
     "jest": "^27.4.4",
     "prettier": "^2.5.1",
+    "sonarqube-scanner": "^2.8.1",
     "vue-jest": "^3.0.4"
   }
 }

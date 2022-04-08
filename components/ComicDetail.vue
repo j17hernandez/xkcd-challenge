@@ -116,7 +116,7 @@ export default {
     ...mapActions(['setNumberMaxComic', 'addItem']),
     // Función para obtener el último comic
     async getDataComic() {
-      await this.$list('/info.0.json')
+      await this.$list('/api/info.0.json')
         .then((resp) => {
           const number = resp.data.num
           this.setNumberMaxComic(number)
@@ -135,7 +135,7 @@ export default {
     // Función para traer el comic aleatorio
     async getList(numberPath) {
       try {
-        const resp = await this.$list(`/${numberPath}/info.0.json`)
+        const resp = await this.$list(`/api/${numberPath}/info.0.json`)
         this.itemComic = { rating: 0, ...resp.data }
       } catch (err) {
         this.$error(err)
